@@ -20,6 +20,7 @@ public class Aluno {
 
     public void imprimirInformacoes(){
         System.out.println("Nome: " + nome );
+        System.out.println("Notas: ");
         for ( double nota : notas){
             System.out.println(nota + "");
         }
@@ -34,19 +35,13 @@ public class Aluno {
         return soma/ notas.length;
     }
 
-    public void verificarNotaAprovacao(double valor){
-        valor = 5;
-
-        for (int valorNotas = 0; valorNotas < 10; valorNotas++){
-        notas[notas.length] = valorNotas;
-            //notas[valorNotas] = ;
-        }
+    public boolean verificarNotaAprovacao(double valor){
         for (int i = 0; i < notas.length; i++){
         if (valor > notas[i] ){
-            System.out.println("Aprovado? ");
+            return false;
         }
         }
-        return;
+        return true;
     }
 
 }
